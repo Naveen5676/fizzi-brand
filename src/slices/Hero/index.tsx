@@ -69,7 +69,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
         start: "top top", // Animation starts when `.hero` top hits the viewport top.
         end: "bottom bottom", // Animation ends when `.hero` bottom hits the viewport bottom.
         scrub: 1.5, // Smooth animation tied to scroll position (1.5 = smooth delay).
-        markers: true, // Add visual markers for debugging (start/end points).
+        // markers: true, // Add visual markers for debugging (start/end points).
       },
     });
 

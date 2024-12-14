@@ -2,6 +2,8 @@
 
 import { Canvas } from "@react-three/fiber"; // React Three Fiber: A React renderer for Three.js
 import React from "react";
+import { Environment } from "@react-three/drei";
+import FloatingCan from "@/components/FloatingCan";
 
 type Props = {};
 
@@ -31,21 +33,8 @@ export default function ViewCanvas({}: Props) {
         3D Object: A mesh is a visible 3D object that combines geometry (shape) and material (appearance).
         Here, we use a simple cube as an example.
       */}
-      <mesh
-        rotation={[0.5, 0.5, 0]} // Set the rotation of the cube (x, y, z axes in radians)
-        position={[1, 0, 0]} // Set the position of the cube in 3D space (x, y, z)
-      >
-        <boxGeometry />{" "}
-        {/* Geometry: Defines the shape of the object (a cube here) */}
-        <meshStandardMaterial color={"hotpink"} />{" "}
-        {/* Material: Sets the color of the cube */}
-      </mesh>
-
-      {/* Ambient light: Provides general lighting to the scene */}
-      <ambientLight intensity={2} />
-
-      {/* SpotLight: Adds a spotlight to simulate directional light */}
-      <spotLight intensity={3} position={[1, 1, 1]} />
+      <FloatingCan />
+      <Environment files="/hdr/lobby.hdr" environmentIntensity={1.5} />
     </Canvas>
   );
 }
